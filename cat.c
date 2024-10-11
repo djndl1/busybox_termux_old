@@ -48,7 +48,7 @@ extern int cat_main(int argc, char **argv)
     argc--;
     argv++;
 
-    while (argc-- > 0) {
+    while (argc > 0) {
 	file = fopen(*argv, "r");
 	if (file == NULL) {
 	    perror(*argv);
