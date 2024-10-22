@@ -236,7 +236,7 @@ copyFile( const char *srcName, const char *destName,
 
 
 
-#ifdef BB_TAR
+#if defined(BB_TAR) || defined(BB_CP)
 /*
  * Return the standard ls-like mode string from a file mode.
  * This is static and so is overwritten on each call.
@@ -385,7 +385,7 @@ int fullRead(int fd, char *buf, int len)
 #endif
 
 
-#if defined (BB_CHOWN) || defined (BB_CP) || defined (BB_FIND) || defined (BB_LS)
+#if defined (BB_CHMOD_CHOWN_CHGRP) || defined (BB_CP) || defined (BB_FIND) || defined (BB_LS)
 /*
  * Walk down all the directories under the specified 
  * location, and do something (something specified
